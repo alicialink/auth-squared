@@ -16,10 +16,5 @@ gulp.task('watch', function () {
   gulp.watch(jsFiles, ['lint'])
 })
 
-function foo() {
-  // Blah goes here
-}
-
-// gulp.task('default', ['lint'])
 gulp.task('default', ['watch'])
 

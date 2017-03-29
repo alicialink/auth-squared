@@ -13,4 +13,11 @@ router.get('/pass', (req, res) => {
   res.render('pass', {})
 })
 
+router.post('/login', (req, res) => {
+  let username = req.body.username
+  let password = req.body.password
+
+  res.redirect('/pass')
+})
+
 module.exports = router

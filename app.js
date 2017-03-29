@@ -9,6 +9,7 @@ let app = express()
 app.set('views', './views')
 app.set('view engine', 'pug')
 
+app.use(bodyParser.urlencoded({extended: false}))
 app.use('/', uiRoutes)
 app.use('/stylesheets', express.static('./public/stylesheets'))
 

@@ -18,12 +18,23 @@ router.post('/login', (req, res) => {
   let username = req.body.username
   let password = req.body.password
 
-  if (users.authenticate(username, password)) {
-    console.log('THey passed!')
-  }
-  else {
-    console.log('They failed')
-  }
+  // if (users.authenticate(username, password)) {
+  //   console.log('They passed!')
+  // }
+  // else {
+  //   console.log('They failed')
+  // }
+
+  users
+    .authenticate(username, password)
+    .then((result) => {
+      if (result) {
+        console.log('PASSED as promised')
+      }
+      else {
+        console.log('FAILED as promised')
+      }
+    })
 
   // res.redirect('/fail')
 })

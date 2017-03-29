@@ -11,8 +11,13 @@ router.get('/fail', (req, res) => {
 })
 
 router.get('/pass', (req, res) => {
-  let username = req.session.username
-  res.render('pass', {username: username})
+  if ('username' in req.session) {
+    let username = req.session.username
+    res.render('pass', {username: username})
+  }
+  else {
+    res.redirect('/')
+  }
 })
 
 router.post('/login', (req, res) => {

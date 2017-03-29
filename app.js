@@ -9,6 +9,15 @@ let app = express()
 app.set('views', './views')
 app.set('view engine', 'pug')
 
+app.use(cookieSession({
+  name: 'session',
+  keys: [
+    process.env.SESSION_KEY_1,
+    process.env.SESSION_KEY_2,
+    process.env.SESSION_KEY_3
+  ]
+}))
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use('/', uiRoutes)
 app.use('/stylesheets', express.static('./public/stylesheets'))

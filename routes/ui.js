@@ -11,7 +11,8 @@ router.get('/fail', (req, res) => {
 })
 
 router.get('/pass', (req, res) => {
-  res.render('pass', {})
+  let username = req.session.username
+  res.render('pass', {username: username})
 })
 
 router.post('/login', (req, res) => {
@@ -22,6 +23,7 @@ router.post('/login', (req, res) => {
     .authenticate(username, password)
     .then((result) => {
       if (result) {
+        req.session.username = username
         res.redirect('/pass')
       }
       else {
@@ -31,6 +33,7 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/logout', (req, res) => {
+  res.session = null
   res.redirect('/')
 })
 

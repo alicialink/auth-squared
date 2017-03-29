@@ -7,7 +7,12 @@ router.get('/', (req, res) => {
 })
 
 router.get('/fail', (req, res) => {
-  res.render('fail', {})
+  if ('username' in req.session) {
+    res.redirect('/pass')
+  }
+  else {
+    res.render('fail', {})
+  }
 })
 
 router.get('/pass', (req, res) => {

@@ -1,0 +1,19 @@
+{
+  "name": "auth-squared",
+  "version": "1.0.0",
+  "description": "Authorization, authentication",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alicialink/auth-squared.git"
+  },
+  "author": "Me",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/alicialink/auth-squared/issues"
+  },
+  "homepage": "https://github.com/alicialink/auth-squared#readme"
+}

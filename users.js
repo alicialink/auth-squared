@@ -1,6 +1,15 @@
+// Never do this except for quick tests
+let stupidUsername = 'cookie'
+let stupidPassword = 'monster'
+
 function authenticate(username, password) {
   return new Promise((resolve, reject) => {
-    resolve(false)
+    if (username === stupidUsername && password === stupidPassword) {
+      resolve(true)
+    }
+    else {
+      resolve(false)
+    }
   })
 }
 

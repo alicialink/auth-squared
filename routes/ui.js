@@ -3,7 +3,12 @@ let users = require('../users')
 let router = express.Router()
 
 router.get('/', (req, res) => {
-  res.render('login', {})
+  if ('username' in req.session) {
+    res.redirect('/pass')
+  }
+  else {
+    res.render('login', {})
+  }
 })
 
 router.get('/fail', (req, res) => {

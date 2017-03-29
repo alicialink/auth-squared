@@ -20,4 +20,8 @@ router.post('/login', (req, res) => {
   res.redirect('/pass')
 })
 
+router.post('/logout', (req, res) => {
+  res.redirect('/')
+})
+
 module.exports = router

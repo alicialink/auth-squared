@@ -1,4 +1,5 @@
 let express = require('express')
+let users = require('../users')
 let router = express.Router()
 
 router.get('/', (req, res) => {
@@ -17,7 +18,14 @@ router.post('/login', (req, res) => {
   let username = req.body.username
   let password = req.body.password
 
-  res.redirect('/fail')
+  if (users.authenticate(username, password)) {
+    console.log('THey passed!')
+  }
+  else {
+    console.log('They failed')
+  }
+
+  // res.redirect('/fail')
 })
 
 router.post('/logout', (req, res) => {

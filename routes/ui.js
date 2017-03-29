@@ -17,7 +17,7 @@ router.post('/login', (req, res) => {
   let username = req.body.username
   let password = req.body.password
 
-  res.redirect('/pass')
+  res.redirect('/fail')
 })
 
 router.post('/logout', (req, res) => {

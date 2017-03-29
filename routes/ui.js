@@ -31,12 +31,13 @@ router.post('/login', (req, res) => {
 
   users
     .authenticate(username, password)
-    .then((result) => {
-      if (result) {
+    .then((authenticationSuccessful) => {
+      if (authenticationSuccessful) {
         req.session.username = username
         res.redirect('/pass')
       }
       else {
+        req.session = null
         res.redirect('/fail')
       }
     })

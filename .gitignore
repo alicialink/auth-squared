@@ -38,3 +38,6 @@ jspm_packages
 
 # No commit .env!
 .env
+
+# Vim junk
+*.swp

@@ -37,7 +37,7 @@ router.post('/login', (req, res) => {
   users
     .authenticate(username, password)
     .then((authenticationSuccessful) => {
-      if (authenticationSuccessful) {
+      if (authenticationSuccessful !== null) {
         req.session.username = username
         res.redirect('/pass')
       }

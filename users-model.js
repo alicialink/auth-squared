@@ -27,7 +27,7 @@ function authenticate(username, clearTextPassword) {
           .compare(clearTextPassword, hashFromDB)
           .then((result) => {
             if (result) {
-              resolve(queryResult)
+              resolve({id: queryResult.id, username: username})
             }
             else {
               resolve(null)

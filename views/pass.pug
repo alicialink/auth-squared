@@ -1,16 +1,16 @@
 doctype html
 html(lang=en)
-  head
-    title Awesome login site
-    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-  body
-    p Congratulations!
-    h1= username
-    p you have logged in
-    p Here are your messages
-    form.addmessageform
-        label(for='message') Witty message
-        input(type='text', id='message', name='message')
-        input(type='submit', value='Add Message')
-    form(action='/logout', method='post').authform
-      input(type='submit', value='logout')
+    head
+        title Awesome login site
+        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    body
+        p Congratulations!
+        h1= username
+        p you have logged in
+        p Here are your messages
+        form.addmessageform
+            label(for='message') Witty message
+            input(type='text', id='message', name='message')
+            input(type='submit', value='Add Message')
+        form(action='/logout', method='post').authform
+            input(type='submit', value='logout')

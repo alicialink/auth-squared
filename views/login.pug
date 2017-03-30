@@ -1,13 +1,13 @@
 doctype html
 html(lang=en)
-  head
-    title Awesome login site
-    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-  body
-    p Please login
-    form(action='/login', method='post').authform
-      label(for='username') Username
-      input(type='text', name='username', id='username')
-      label(for='password') Password
-      input(type='password', name='password', id='password')
-      input(type='submit', value='Login')
+    head
+        title Awesome login site
+        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    body
+        p Please login
+        form(action='/login', method='post').authform
+            label(for='username') Username
+            input(type='text', name='username', id='username')
+            label(for='password') Password
+            input(type='password', name='password', id='password')
+            input(type='submit', value='Login')

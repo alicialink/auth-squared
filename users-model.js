@@ -1,6 +1,13 @@
 let db = require('./knex')
+let bcrypt = require('bcrypt')
 
-function authenticate(username, password) {
+let saltRounds = 10
+
+function hashPassword(clearText) {
+  return bcrypt.hashSync(clearText, saltRounds)
+}
+
+function authenticate(username, clearTextPassword) {
   return new Promise((resolve, reject) => {
     db
       .select('id', 'username', 'password')
@@ -15,14 +22,23 @@ function authenticate(username, password) {
         }
       })
       .then((queryResult) => {
-        if (queryResult.password === password) {
-          resolve(queryResult)
-        }
+        let hashFromDB = queryResult.password
+        bcrypt
+          .compare(clearTextPassword, hashFromDB)
+          .then((result) => {
+            if (result) {
+              resolve(queryResult)
+            }
+            else {
+              resolve(null)
+            }
+          })
       })
       .catch((err) => reject(err))
   })
 }
 
 module.exports = {
-  authenticate: authenticate
+  authenticate: authenticate,
+  hashPassword: hashPassword
 }

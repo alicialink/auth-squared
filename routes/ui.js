@@ -1,5 +1,5 @@
 let express = require('express')
-let users = require('../users')
+let users = require('../users-model')
 let router = express.Router()
 
 router.get('/', (req, res) => {

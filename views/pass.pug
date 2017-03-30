@@ -7,5 +7,5 @@ html(lang=en)
     p Congratulations!
     h1= username
     p you have logged in
-    form(action='/logout', method='post')
+    form(action='/logout', method='post').authform
       input(type='submit', value='logout')

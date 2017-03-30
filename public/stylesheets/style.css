@@ -2,19 +2,19 @@ body {
   font-family: sans-serif;
 }
 
-form {
+.authform {
   border: 1px solid blue;
   width: 10em;
   padding: 1em;
 }
 
-form input {
+.authform input {
   display: block;
   width: 100%;
   margin-bottom: 1em;
 }
 
-form label {
+.authform label {
   display: block;
   width: 100%;
 }

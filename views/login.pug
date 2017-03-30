@@ -5,7 +5,7 @@ html(lang=en)
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
   body
     p Please login
-    form(action='/login', method='post')
+    form(action='/login', method='post').authform
       label(for='username') Username
       input(type='text', name='username', id='username')
       label(for='password') Password

@@ -2,19 +2,25 @@ body {
   font-family: sans-serif;
 }
 
+.addmessageform {
+  background-color: lightcyan;
+  width: 10em;
+  padding: 1em;
+}
+
 .authform {
   border: 1px solid blue;
   width: 10em;
   padding: 1em;
 }
 
-.authform input {
+.authform input, .addmessageform input {
   display: block;
   width: 100%;
   margin-bottom: 1em;
 }
 
-.authform label {
+.authform label, .addmessageform label {
   display: block;
   width: 100%;
 }
